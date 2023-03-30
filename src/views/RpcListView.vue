@@ -20,7 +20,7 @@
           <a v-bind:href="'rpc/'+rpc.name"> 
             <span class="cmd">{{rpc.name}}</span>
             <span class="args">&nbsp;<code>{{rpc.args}}</code></span>
-            <!-- <p class="deprecated" v-if="rpc.deprecated">DEPRECATED</p> -->
+            <p class="deprecated" v-if="rpc.deprecated">DEPRECATED</p>
             <span class="summary">
               <p>{{rpc.summary}}</p>
             </span>

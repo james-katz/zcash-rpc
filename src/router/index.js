@@ -3,17 +3,17 @@ import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/zcashrpc/',
     name: 'home',
     component: HomeView
   },
   {
-    path: '/rpclist',
+    path: '/zcashrpc/rpclist',
     name: 'rpc-list',
     component: () => import('../views/RpcListView.vue')
   },
   {
-    path: '/rpc/:name',
+    path: '/zcashrpc/rpc/:name',
     name: 'rpc-view',
     component: () => import('../views/RpcView.vue')
   }

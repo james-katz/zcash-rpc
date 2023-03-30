@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <strong>ZcashRPC</strong> is an opensource autamated documentation website for zcashd. Check out the code on github.
+        <strong>ZcashRPC</strong> is an opensource autamated documentation website for zcashd. Check out the code on <a href="https://github.com/james-katz/zcash-rpc">github</a>.
         <p>Developed and mantained by James Katz.</p>
     </div>
 </template>

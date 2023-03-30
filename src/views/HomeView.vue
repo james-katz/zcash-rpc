@@ -3,13 +3,13 @@
     <div class="welcome">
       <h2 class="command">
         <span class="name">Welcome</span>
-        <span class="arg">Zcash Network APIs documentation</span>
+        <span class="arg">Zcash Network API documentation</span>
 
       </h2>
     </div>
     <div class="row">
       <div class="col-md">
-        <router-link to="/rpclist">Zcash CLI JSON RPC</router-link>
+        <router-link to="/zcashrpc/rpclist">Zcash CLI JSON RPC</router-link>
         <p class="zcashd-version">Zcashd version: "zcashd v5.4.1"</p>
         <p class="info">
           Welcome to our comprehensive documentation website for Zcash RPC calls. Here, you'll find everything you need to know about calling Zcashd's more than 100 available RPC methods, including detailed information on how to interact with the blockchain, manage wallets, and more. Whether you're a developer, a Zcash enthusiast, or just looking to learn more about Zcash, our website is your go-to resource for all things Zcash RPC.

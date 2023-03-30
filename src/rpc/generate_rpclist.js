@@ -27,13 +27,16 @@ exec(zcashCli + ' help', (err, stdout, stderr) => {
             if(rpclist[i]) { 
                 const regex = /^(\S+)\s?(.*)$/;
                 const rpcrgx = regex.exec(rpclist[i]);
+                
+                const rpcName = rpcrgx[1];
+                const rpcArgs = rpcrgx[2];
                 const rpcHelp = execSync(zcashCli + ' help ' + rpcrgx[1]).toString();
                 const rpcSummary = getSummary(rpcHelp);
-                const rpcDeprecated = isDeprecated(rpcHelp);
+                const rpcDeprecated = isDeprecated(rpcArgs, rpcSummary);
 
                 item.calls.push({
-                    name: rpcrgx[1],
-                    args: rpcrgx[2],
+                    name: rpcName,
+                    args: rpcArgs,
                     summary: rpcSummary,
                     help: rpcHelp,
                     deprecated: rpcDeprecated
@@ -59,7 +62,7 @@ function getSummary(rpc) {
     return summary;
 }
 
-function isDeprecated(rpc) {
-    if(rpc.includes('DEPRECATED')) return true;
+function isDeprecated(args, summ) {
+    if(args.includes('DEPRECATED') || summ.includes('DEPRECATED')) return true;
     return false;
 }
