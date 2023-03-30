@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <router-link to="/zcashrpc/" class="nav-link">Home</router-link>
+            <router-link to="/" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item active">
-            <router-link to="/zcashrpc/rpclist" class="nav-link">Zcash CLI</router-link>
+            <router-link to="/rpclist" class="nav-link">Zcash CLI</router-link>
           </li>
         </ul>
       </div>      
