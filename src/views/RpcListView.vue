@@ -3,7 +3,7 @@
     <div class="filter">
       <span class="filter-category">
         Filter by category: 
-        <select class="custom-select" v-model="filterCategory">
+        <select class="custom-select" v-model="filterCategory" v-on:change="clearFilterCmd()">
           <option selected>All</option>
           <option v-for="rpc in rpcList" v-bind:key="rpc.category">{{rpc.category}}</option>          
         </select>
@@ -70,6 +70,9 @@ export default {
       });
 
       return items;
+    },
+    clearFilterCmd() {
+      this.filterCmd = '';      
     }
   }  
 }

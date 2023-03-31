@@ -46,7 +46,7 @@ exec(zcashCli + ' help', (err, stdout, stderr) => {
 
         rpcJson.push(item)
     });
-    fs.writeFileSync('rpclist.json', JSON.stringify(rpcJson));
+    fs.writeFileSync(__dirname+'/rpclist.json', JSON.stringify(rpcJson));
   });
 
 function getSummary(rpc) {
