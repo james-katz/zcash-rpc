@@ -3,14 +3,14 @@
     <div class="filter">
       <span class="filter-category">
         Filter by category: 
-        <select class="custom-select" v-model="filterCategory" v-on:change="clearFilterCmd()">
+        <select class="custom-select"  v-model="filterCategory" v-on:change="clearFilterCmd()">
           <option selected>All</option>
           <option v-for="rpc in rpcList" v-bind:key="rpc.category">{{rpc.category}}</option>          
         </select>
       </span>
       <span class="filter-command">
         or by Command
-        <input type="text" class="form-control-sm" v-model="filterCmd">
+        <input type="text" class="form-control-sm" v-model="filterCmd" v-on:keyup="changeCatergoryToAll()">
       </span>
     </div>
   </div>
@@ -49,7 +49,7 @@ export default {
 
       if(this.filterCmd) {                
         items = this.getRpcList(true);
-        items = items.flat().filter(el => el.name.match(this.filterCmd));
+        items = items.flat().filter(el => el.name.match(this.filterCmd));        
       }     
       
       return items.flat();
@@ -62,7 +62,7 @@ export default {
 
       if(filter) {
         categories = this.rpcList;
-        this.filterCategory = 'All';
+        // this.filterCategory = 'All';
       }
 
       categories.forEach(el => {        
@@ -72,7 +72,10 @@ export default {
       return items;
     },
     clearFilterCmd() {
-      this.filterCmd = '';      
+      this.filterCmd = '';  
+    },
+    changeCatergoryToAll() {
+      if(this.filterCmd) this.filterCategory = 'All';      
     }
   }  
 }
