@@ -5,7 +5,7 @@ const { exec, execSync } = require('child_process');
 const fs = require('fs');
 
 // Path to zcash-cli
-const zcashCli = '~/zcash-5.4.2/bin/zcash-cli';
+const zcashCli = '~/zcash-5.7.0/bin/zcash-cli';
 
 exec(zcashCli + ' help', (err, stdout, stderr) => {
     if (err) {
